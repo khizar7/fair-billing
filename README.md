@@ -13,16 +13,19 @@ for users based on session start and end logs.
 
 ## Setup and Run Instructions
 
-### 1. Build the Docker Image
-
+### 1. Build the JAR File using Maven
+```sh
+mvn clean install
+```
+### 2. Build the Docker Image
 ```sh
 docker build -t fair-billing-app .
 ```
-### 2. Run the Application
+### 3. Run the Application
 ```sh
 docker run -v "$(pwd)/src/test/resources:/logs" fair-billing-app /logs/input.txt
 ```
-### 3. To run the tests, you can use the following command:
+### 4. To run the tests, you can use the following command:
 ```sh
 mvn test
 ```
